@@ -1,0 +1,11 @@
+{
+    "name": "TermsAndConditions",
+    "alias": "termsandconditions",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\TermsAndConditions\\Providers\\TermsAndConditionsServiceProvider"
+    ],
+    "files": []
+}

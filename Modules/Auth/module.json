@@ -1,0 +1,22 @@
+{
+    "name": "Auth",
+    "alias": "auth",
+    "description": "Auth Module Using Sanctum Library",
+    "title": "Auth Module",
+    "version": "1.0",
+    "authors": [
+        {
+            "name": "Mohamed Attar",
+            "email": "mohammedattar0100020@gmail.com"
+        }
+    ],
+    "compatibility": "10",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Auth\\Providers\\AuthModuleServiceProvider"
+    ],
+    "aliases": {
+    },
+    "files": []
+}

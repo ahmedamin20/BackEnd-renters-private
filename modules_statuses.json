@@ -1,0 +1,10 @@
+{
+    "Role": true,
+    "User": true,
+    "AboutUs": true,
+    "Ad": true,
+    "ContactUs": true,
+    "TermsAndConditions": true,
+    "Auth": true,
+    "Setting": true
+}

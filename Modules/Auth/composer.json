@@ -1,0 +1,27 @@
+{
+    "name": "elattar/auth",
+    "description": "Auth Module For SPA and mobile using sanctum",
+    "authors": [
+        {
+            "name": "Mohamed Attar",
+            "email": "mohammedattar0100020@gmail.com"
+        }
+    ],
+    "require": {
+        "laravel/sanctum": "^3.2",
+        "spatie/laravel-medialibrary": "^10.7"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+            ],
+            "aliases": {
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Test\\": ""
+        }
+    }
+}
