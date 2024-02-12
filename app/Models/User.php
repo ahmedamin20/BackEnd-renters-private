@@ -193,4 +193,9 @@ class User extends Authenticatable implements HasMedia
     {
         return $this->fcm_token;
     }
+
+    public function scopeWithAvatar()
+    {
+
+    }
 }

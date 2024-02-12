@@ -6,5 +6,8 @@
     "ContactUs": true,
     "TermsAndConditions": true,
     "Auth": true,
-    "Setting": true
+    "Setting": true,
+    "Category": true,
+    "Markable": true,
+    "Product": true
 }

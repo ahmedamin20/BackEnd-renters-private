@@ -56,10 +56,25 @@ class Handler extends ExceptionHandler
      */
     public function register(): void
     {
+        $this->renderable(
+            function (
+                DoesNotHaveStoreException|DoesNotHaveBranchException $e
+            ) {
+                return $this->forbiddenResponse($e->getMessage());
+            });
+
         // Handle Unauthorized User
         $this->renderable(function (AuthenticationException $e, $req) {
 
             return $this->unauthenticatedResponse('You are not authenticated');
+        });
+
+        $this->renderable(function (ValidationErrorsException $e) {
+            return $this->validationErrorsResponse($e->getErrors());
+        });
+
+        $this->renderable(function (InternetServerErrorException $e) {
+            return $this->errorResponse(message: $e->getMessage());
         });
 
         $this->renderable(function (NotFoundHttpException $e, $req) {

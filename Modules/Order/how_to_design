@@ -1,0 +1,23 @@
+migrations
+    orders_table
+        id, product_id(foreignKey), user_id(foreignKey), status, order_details(json)
+
+models
+    Order
+        product_id, user_id, order_details
+
+        product(): belongsTo
+        user(): belongsTo
+
+DeleteOrderForClientRequest
+CancelOrApproveOrderRequest
+StoreOrderForClientRequest
+
+CURD operations
+    index
+    show
+    store
+    update
+    delete
+
+    store operation

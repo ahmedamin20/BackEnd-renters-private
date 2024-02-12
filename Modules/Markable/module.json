@@ -1,0 +1,11 @@
+{
+    "name": "Markable",
+    "alias": "markable",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Markable\\Providers\\MarkableServiceProvider"
+    ],
+    "files": []
+}

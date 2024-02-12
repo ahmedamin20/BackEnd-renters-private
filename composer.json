@@ -16,6 +16,7 @@
         "laravel/sanctum": "^3.3",
         "laravel/telescope": "^4.17",
         "laravel/tinker": "^2.8",
+        "maize-tech/laravel-markable": "^2.1",
         "nwidart/laravel-modules": "^10.0",
         "spatie/laravel-backup": "^8.4",
         "spatie/laravel-medialibrary": "^10.15",
