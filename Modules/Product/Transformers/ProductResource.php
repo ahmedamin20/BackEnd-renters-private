@@ -18,6 +18,7 @@ class ProductResource extends JsonResource
             'name' => $this->name,
             'minimum_days' => $this->whenHas('minimum_days'),
             'maximum_days' => $this->whenHas('maximum_days'),
+            'rating_average' => $this->whenHas('rating_average'),
             'health' => $this->whenHas('health'),
             'category_id' => $this->whenHas('category_id'),
             'description' => $this->whenHas('description'),

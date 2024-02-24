@@ -75,6 +75,10 @@ class Product extends Model implements HasMedia
         Favorite::class,
     ];
 
+    protected $casts = [
+        'rating_average' => 'double',
+    ];
+
     protected $fillable = [
         'name',
         'price',
@@ -104,11 +108,6 @@ class Product extends Model implements HasMedia
             ->select(['id', 'model_id', 'disk', 'file_name']);
     }
 
-    public function features(): MorphMany
-    {
-        return $this->morphMany(FeatureRelation::class, 'featurable');
-    }
-
     public function main_image()
     {
         return $this
@@ -116,21 +115,4 @@ class Product extends Model implements HasMedia
             ->where('collection_name', 'main_image')
             ->select(['id', 'model_id', 'disk', 'file_name']);
     }
-
-    public function scopeWithCategory($query)
-    {
-        return $query->with('category:id,name');
-    }
-
-    public function scopeWithMainImage($query)
-    {
-        return $query->with('main_image');
-    }
-
-    public function scopeWithOtherImages($query)
-    {
-        return $query->with('other_images');
-    }
-
-
 }
