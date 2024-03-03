@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('whatsapp')->nullable();
             $table->string('linkedin')->nullable();
             $table->string('youtube')->nullable();
+            $table->string('phone')->nullable();
             $table->string('working_hours');
         });
     }
