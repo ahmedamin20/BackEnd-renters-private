@@ -9,6 +9,7 @@ use App\Http\Middleware\EncryptCookies;
 use App\Http\Middleware\PreventRequestsDuringMaintenance;
 use App\Http\Middleware\RedirectIfAuthenticated;
 use App\Http\Middleware\SetDefaultLocale;
+use App\Http\Middleware\TestMiddleware;
 use App\Http\Middleware\TrimStrings;
 use App\Http\Middleware\TrustProxies;
 use App\Http\Middleware\ValidateSignature;
@@ -67,9 +68,11 @@ class Kernel extends HttpKernel
             ShareErrorsFromSession::class,
             VerifyCsrfToken::class,
             SubstituteBindings::class,
+
         ],
 
         'api' => [
+
                 // \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
             ThrottleRequests::class . ':api',
             SubstituteBindings::class,
@@ -95,8 +98,9 @@ class Kernel extends HttpKernel
         'signed' => ValidateSignature::class,
         'throttle' => ThrottleRequests::class,
         'verified' => EnsureEmailIsVerified::class,
-        'permission' => PermissionMiddleware::class,
+//        'permission' => PermissionMiddleware::class,
         'account_must_be_active' => AccountMustBeActive::class,
         'must_be_verified' => MustBeVerified::class,
+        'test_middleware' => TestMiddleware::class,
     ];
 }

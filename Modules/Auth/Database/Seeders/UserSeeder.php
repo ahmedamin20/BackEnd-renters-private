@@ -33,5 +33,15 @@ class UserSeeder extends Seeder
                 $user->assignRole($type);
             }
         }
+
+
+        User::create([
+            'name' => 'Client 2',
+            'email' => 'client2@gmail.com',
+            'email_verified_at' => now(),
+            'status' => true,
+            'password' => 'client2',
+            'type' => UserTypeEnum::USER,
+        ]);
     }
 }

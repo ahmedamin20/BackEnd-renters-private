@@ -17,7 +17,8 @@ use Modules\Ad\Http\Controllers\PublicAdController;
 */
 
 Route::group(['prefix' => 'admin/ads', 'middleware' => [GeneralHelper::authMiddleware()]], function () {
-    Route::get('', [AdminAdController::class, 'index']);
+    Route::get('', [AdminAdController::class, 'index'])
+        ->middleware(['test_middleware']);
     Route::post('', [AdminAdController::class, 'store']);
     Route::get('{ad}', [AdminAdController::class, 'show']);
     Route::post('{ad}', [AdminAdController::class, 'update']);

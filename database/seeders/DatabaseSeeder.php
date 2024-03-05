@@ -9,6 +9,7 @@ use Modules\Ad\Database\Seeders\AdDatabaseSeeder;
 use Modules\Auth\Database\Seeders\UserSeeder;
 use Modules\Category\Database\Seeders\CategoryDatabaseSeeder;
 use Modules\ContactUs\Database\Seeders\ContactUsDatabaseSeeder;
+use Modules\Order\Database\Seeders\OrderDatabaseSeeder;
 use Modules\Product\Database\Seeders\ProductDatabaseSeeder;
 use Modules\Role\Database\Seeders\PermissionTableSeeder;
 use Modules\Setting\Database\Seeders\SettingSeeder;
@@ -31,6 +32,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             CategoryDatabaseSeeder::class,
             ProductDatabaseSeeder::class,
+            OrderDatabaseSeeder::class,
         ]);
     }
 }

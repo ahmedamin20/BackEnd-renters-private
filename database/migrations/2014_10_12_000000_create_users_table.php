@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Modules\Auth\Enums\UserTypeEnum;
 
 return new class extends Migration
 {
@@ -19,7 +20,8 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->boolean('status');
-            $table->enum('type', \Modules\Auth\Enums\UserTypeEnum::availableTypes());
+            $table->enum('type', UserTypeEnum::availableTypes());
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -9,5 +9,6 @@
     "Setting": true,
     "Category": true,
     "Markable": true,
-    "Product": true
+    "Product": true,
+    "Order": true
 }

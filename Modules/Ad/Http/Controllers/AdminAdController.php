@@ -22,6 +22,7 @@ class AdminAdController extends Controller
 
     public function index(): JsonResponse
     {
+        echo 'Hi From Ads';
         $ads = $this->adService->index();
 
         return $this->paginatedResponse(

@@ -2,8 +2,8 @@
 
 namespace Modules\Order\Providers;
 
-use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -35,7 +35,7 @@ class RouteServiceProvider extends ServiceProvider
     {
         $this->mapApiRoutes();
 
-        //        $this->mapWebRoutes();
+        // $this->mapWebRoutes();
     }
 
     /**
@@ -61,7 +61,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapApiRoutes()
     {
-        Route::prefix('orders')
+        Route::prefix('api')
             ->middleware('api')
             ->namespace($this->moduleNamespace)
             ->group(module_path('Order', '/Routes/api.php'));

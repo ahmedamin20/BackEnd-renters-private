@@ -2,6 +2,7 @@
 
 namespace Modules\Product\Services;
 
+use App\Exceptions\ValidationErrorsException;
 use App\Helpers\UserHelper;
 use App\Http\Controllers\SearchController;
 use App\Services\FileOperationService;
@@ -119,5 +120,20 @@ class ProductService
     public function update(array $data, int $id): bool|array
     {
         return $this->storeOrUpdate($data, $id);
+    }
+
+    /**
+     * @throws ValidationErrorsException
+     */
+    public function productExists($productId)
+    {
+        $product = Product::whereId($productId)->first();
+
+        if(! $product)
+        {
+            throw new ValidationErrorsException(['product_id' => 'Product not found!']);
+        }
+
+        return $product;
     }
 }
