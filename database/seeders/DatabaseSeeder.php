@@ -30,7 +30,7 @@ class DatabaseSeeder extends Seeder
 //            ContactUsDatabaseSeeder::class,
             PermissionTableSeeder::class,
             UserSeeder::class,
-//            CategoryDatabaseSeeder::class,
+            CategoryDatabaseSeeder::class,
 //            ProductDatabaseSeeder::class,
 //            OrderDatabaseSeeder::class,
         ]);
