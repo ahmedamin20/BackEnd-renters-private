@@ -10,7 +10,6 @@ class TestMiddleware
 {
     public function handle(Request $request, Closure $next): Response
     {
-        echo "Hi From Middleware\n";
         return $next($request);
     }
 }
