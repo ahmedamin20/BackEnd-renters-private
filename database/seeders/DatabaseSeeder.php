@@ -26,13 +26,13 @@ class DatabaseSeeder extends Seeder
             AboutUsDatabaseSeeder::class,
             SettingSeeder::class,
             TermsAndConditionsDatabaseSeeder::class,
-            AdDatabaseSeeder::class,
-            ContactUsDatabaseSeeder::class,
+//            AdDatabaseSeeder::class,
+//            ContactUsDatabaseSeeder::class,
             PermissionTableSeeder::class,
             UserSeeder::class,
-            CategoryDatabaseSeeder::class,
-            ProductDatabaseSeeder::class,
-            OrderDatabaseSeeder::class,
+//            CategoryDatabaseSeeder::class,
+//            ProductDatabaseSeeder::class,
+//            OrderDatabaseSeeder::class,
         ]);
     }
 }
