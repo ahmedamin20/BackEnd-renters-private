@@ -70,7 +70,7 @@ class ProductService
             //TODO Store The Main Image
             $fileOperationService->storeImageFromRequest(
                 $product,
-                'main_image',
+                ClientProductController::$collectionName,
                 'main_image',
             );
 
@@ -90,7 +90,6 @@ class ProductService
                     $product,
                     ClientProductController::$collectionName,
                     'main_image',
-                    ClientProductController::$mainImageStoredFileName
                 );
             }
 
