@@ -28,7 +28,6 @@ class RegisterRequest extends FormRequest
 
             'name' => ValidationRuleHelper::stringRules(),
             'password' => ValidationRuleHelper::defaultPasswordRules(),
-            'approve_terms' => ValidationRuleHelper::booleanRules(),
         ]
             + (
                 IsEnabled::captcha()
