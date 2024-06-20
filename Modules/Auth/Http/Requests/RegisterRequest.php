@@ -25,7 +25,11 @@ class RegisterRequest extends FormRequest
             AuthEnum::UNIQUE_COLUMN => AuthEnum::isUniqueKeyEmail()
                 ? ValidationRuleHelper::emailRules()
                 : ValidationRuleHelper::phoneRules(),
-
+            'phone' => ValidationRuleHelper::phoneRules([
+                'required' => 'nullable',
+            ]),
+            'front_national_id' => ValidationRuleHelper::storeOrUpdateImageRules(),
+            'back_national_id' => ValidationRuleHelper::storeOrUpdateImageRules(),
             'name' => ValidationRuleHelper::stringRules(),
             'password' => ValidationRuleHelper::defaultPasswordRules(),
         ]

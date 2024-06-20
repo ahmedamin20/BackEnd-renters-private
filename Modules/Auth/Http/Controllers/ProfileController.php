@@ -40,8 +40,8 @@ class ProfileController extends Controller
 
     public function show()
     {
-        $loggedUserInfo = User::whereId(auth()->id())->with(['avatar'])->first();
-        
+        $loggedUserInfo = User::whereId(auth()->id())->with(['avatar', 'frontNational', 'backNational'])->first();
+
         return $this->resourceResponse(new UserResource($loggedUserInfo));
     }
 }

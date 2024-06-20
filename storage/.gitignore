@@ -1,2 +1,6 @@
 *.log
 *.log.*
+model/myvenv
+__pycache__
+temp.jpg
+!.env

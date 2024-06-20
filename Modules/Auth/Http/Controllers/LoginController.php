@@ -45,13 +45,17 @@ class LoginController extends Controller
                 translate_success_message('user', 'logged')
             );
 
-        } elseif (isset($result['not_verified']) || isset($result['frozen'])) {
+        } elseif (isset($result['not_verified']) || isset($result['frozen']) || isset($result['identity_not_verified'])) {
             $message = translate_error_message(
                 'user',
                 isset($result['not_verified'])
                     ? 'not_verified'
                     : 'frozen'
             );
+
+            if(isset($data['identity_not_verified'])) {
+                $message = 'Your identity verification is pending, we will notify you on email once it\'s done';
+            }
 
             return $this->errorResponse(
                 null,

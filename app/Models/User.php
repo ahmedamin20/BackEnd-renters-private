@@ -131,6 +131,9 @@ class User extends Authenticatable implements HasMedia
         'status',
         'social_provider',
         'price_plan_expires_at',
+        'identity_verified',
+        'front_national_id',
+        'back_national_id',
     ];
 
     /**
@@ -151,6 +154,10 @@ class User extends Authenticatable implements HasMedia
     protected $casts = [
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
+        'identity_verified' => 'boolean',
+        'front_national_id' => 'array',
+        'back_national_id' => 'array',
+        'status' => 'boolean',
     ];
 
     public function scopeWhereActive($query): Builder
@@ -166,6 +173,14 @@ class User extends Authenticatable implements HasMedia
     public function avatar(): MorphMany
     {
         return MediaHelper::mediaRelationship($this, AuthEnum::AVATAR_RELATIONSHIP_NAME);
+    }
+    public function frontNational(): MorphMany
+    {
+        return MediaHelper::mediaRelationship($this, 'frontNational');
+    }
+    public function backNational(): MorphMany
+    {
+        return MediaHelper::mediaRelationship($this, 'backNational');
     }
 
     public function scopeWhereValidType(Builder $query, bool $isMobile): Builder

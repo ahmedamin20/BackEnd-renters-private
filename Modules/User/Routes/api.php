@@ -2,6 +2,7 @@
 
 use App\Helpers\GeneralHelper;
 use Illuminate\Support\Facades\Route;
+use Modules\User\Http\Controllers\ClientController;
 use Modules\User\Http\Controllers\UserController;
 
 Route::group(['prefix' => 'admin/users', 'middleware' => [GeneralHelper::authMiddleware()]], function () {
@@ -11,4 +12,10 @@ Route::group(['prefix' => 'admin/users', 'middleware' => [GeneralHelper::authMid
     Route::post('{id}', [UserController::class, 'update']);
     Route::delete('{id}', [UserController::class, 'destroy']);
     Route::patch('{user}', [UserController::class, 'changeStatus']);
+});
+
+Route::group(['prefix' => 'admin/clients'], function(){
+   Route::get('', [ClientController::class, 'index']);
+   Route::get('{id}', [ClientController::class, 'show']);
+   Route::patch('{id}', [ClientController::class, 'changeStatus']);
 });

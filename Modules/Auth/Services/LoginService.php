@@ -39,7 +39,7 @@ class LoginService
         $errors = [];
         $user = User::where(AuthEnum::UNIQUE_COLUMN, $validatedData[AuthEnum::UNIQUE_COLUMN])
             ->whereValidType($isMobile)
-            ->with(AuthEnum::AVATAR_RELATIONSHIP_NAME)
+            ->with([AuthEnum::AVATAR_RELATIONSHIP_NAME, 'frontNational', 'backNational'])
             ->first([
                 'id',
                 'name',
@@ -62,6 +62,12 @@ class LoginService
 
         if (! $this->isVerified($user)) {
             $errors['not_verified'] = true;
+
+            return $errors;
+        }
+
+        if($user->identity_verified === false) {
+            $errors['identity_not_verified'] = true;
 
             return $errors;
         }

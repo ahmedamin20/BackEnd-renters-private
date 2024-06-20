@@ -16,6 +16,7 @@ class AdminProductController extends Controller
         return $this->paginatedResponse(
             Product::query()
                 ->latest()
+                ->searchByForeignKey('category_id', request()->input('category_id'))
                 ->with(['main_image', 'other_images', 'category:id,name', 'user' => function($query){
                     $query->select(['id', 'name']);
                 }])->paginatedCollection(),

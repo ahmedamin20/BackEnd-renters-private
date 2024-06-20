@@ -17,6 +17,8 @@ class UserResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
+            'status' => $this->whenHas('status'),
+            'identity_verified' => $this->whenHas('identity_verified'),
             'rolesIds' => $this->whenHas('rolesIds'),
             AuthEnum::UNIQUE_COLUMN => $this->whenHas(AuthEnum::UNIQUE_COLUMN),
             'avatar' => $this->whenNotNull(
@@ -26,10 +28,26 @@ class UserResource extends JsonResource
                     'user.png'
                 )
             ),
+            'front_national' => $this->whenNotNull(
+                ResourceHelper::getFirstMediaOriginalUrl(
+                    $this,
+                    'frontNational',
+                    'user.png'
+                )
+            ),
+            'back_national' => $this->whenNotNull(
+                ResourceHelper::getFirstMediaOriginalUrl(
+                    $this,
+                    'backNational',
+                    'user.png'
+                )
+            ),
             'type' => $this->whenHas(
                 'type',
             ),
             'token' => $this->whenHas('token'),
+            'front_national_id' => $this->whenHas('front_national_id'),
+            'back_national_id' => $this->whenHas('back_national_id'),
             $this->mergeWhen($this->relationLoaded('roles'), function () {
                 $role = $this->roles->first();
                 $permissions = [];
