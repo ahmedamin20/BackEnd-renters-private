@@ -98,7 +98,7 @@ class Kernel extends HttpKernel
         'signed' => ValidateSignature::class,
         'throttle' => ThrottleRequests::class,
         'verified' => EnsureEmailIsVerified::class,
-//        'permission' => PermissionMiddleware::class,
+       'permission' => TestMiddleware::class,
         'account_must_be_active' => AccountMustBeActive::class,
         'must_be_verified' => MustBeVerified::class,
         'test_middleware' => TestMiddleware::class,
