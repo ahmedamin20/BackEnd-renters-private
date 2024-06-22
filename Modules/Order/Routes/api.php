@@ -3,6 +3,7 @@
 use App\Helpers\GeneralHelper;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Modules\Order\Http\Controllers\AdminOrderController;
 use Modules\Order\Http\Controllers\OrderController;
 
 /*
@@ -22,4 +23,9 @@ Route::group(['middleware' => GeneralHelper::getDefaultLoggedUserMiddlewares()],
     Route::post('orders/{id}/reject', [OrderController::class, 'reject']);
     Route::apiResource('orders', OrderController::class)
         ->only(['index', 'show', 'store']);
+});
+
+Route::group(['prefix' => 'admin/orders'], function(){
+   Route::get('', [AdminOrderController::class, 'index']);
+   Route::get('{id}', [AdminOrderController::class, 'show']);
 });
