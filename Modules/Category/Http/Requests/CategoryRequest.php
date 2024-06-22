@@ -20,7 +20,7 @@ class CategoryRequest extends FormRequest
             'name' => ValidationRuleHelper::stringRules([
                 'unique' => ValidationRuleHelper::getUniqueColumn($inUpdate, 'categories', $idValue, 'name'),
             ]),
-            'image' => ValidationRuleHelper::storeOrUpdateImageRules($inUpdate, ['mimes' => 'mimes:svg']),
+            'image' => ValidationRuleHelper::storeOrUpdateImageRules($inUpdate),
         ];
     }
 
