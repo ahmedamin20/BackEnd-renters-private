@@ -55,7 +55,6 @@ class AdminCategoryService extends BaseCategoryService
                 $category,
                 AdminCategoryController::$collectionName,
                 'image',
-                Str::random().'.svg'
             );
         }
 
