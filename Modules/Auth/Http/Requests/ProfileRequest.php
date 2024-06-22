@@ -40,6 +40,9 @@ class ProfileRequest extends FormRequest
                 ),
                 'email' => 'email',
             ]),
+            'phone' => ValidationRuleHelper::phoneRules([
+                'required' => 'sometimes',
+            ]),
             'avatar' => ValidationRuleHelper::storeOrUpdateImageRules(true),
             'address' => ValidationRuleHelper::longTextRules([
                 'required' => 'sometimes'

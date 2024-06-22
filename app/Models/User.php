@@ -135,6 +135,7 @@ class User extends Authenticatable implements HasMedia
         'front_national_id',
         'back_national_id',
         'address',
+        'phone',
     ];
 
     /**
