@@ -41,6 +41,9 @@ class ProfileRequest extends FormRequest
                 'email' => 'email',
             ]),
             'avatar' => ValidationRuleHelper::storeOrUpdateImageRules(true),
+            'address' => ValidationRuleHelper::longTextRules([
+                'required' => 'sometimes'
+            ]),
         ];
     }
 

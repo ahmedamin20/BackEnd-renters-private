@@ -19,6 +19,7 @@ class UserResource extends JsonResource
             'name' => $this->name,
             'status' => $this->whenHas('status'),
             'identity_verified' => $this->whenHas('identity_verified'),
+            'address' => $this->whenHas('address'),
             'rolesIds' => $this->whenHas('rolesIds'),
             AuthEnum::UNIQUE_COLUMN => $this->whenHas(AuthEnum::UNIQUE_COLUMN),
             'avatar' => $this->whenNotNull(

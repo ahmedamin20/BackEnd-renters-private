@@ -53,6 +53,7 @@ class RegisterService
     private function queueNationalIdValidation($user)
     {
         $fileOperationService = new FileOperationService();
+        $fileOperationService->storeImageFromRequest($user, 'avatar', 'avatar');
         $fileOperationService->storeImageFromRequest($user, 'frontNational', 'front_national_id');
         $fileOperationService->storeImageFromRequest($user, 'backNational', 'back_national_id');
         $front = $user->getMedia('frontNational')->first();

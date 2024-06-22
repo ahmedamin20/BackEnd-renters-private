@@ -30,7 +30,9 @@ class RegisterRequest extends FormRequest
             ]),
             'front_national_id' => ValidationRuleHelper::storeOrUpdateImageRules(),
             'back_national_id' => ValidationRuleHelper::storeOrUpdateImageRules(),
+            'avatar' => ValidationRuleHelper::storeOrUpdateImageRules(),
             'name' => ValidationRuleHelper::stringRules(),
+            'address' => ValidationRuleHelper::addressRules(),
             'password' => ValidationRuleHelper::defaultPasswordRules(),
         ]
             + (
